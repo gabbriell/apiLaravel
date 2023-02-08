@@ -22,20 +22,20 @@ class EquipesController extends Controller
     {
         $equipe = Equipes::create($request->all());
  
-        return response()->json_encode($equipe, 201);
+        return response()->json($equipe, 201);
     }
  
     public function update(Request $request, Equipes $equipe)
     {
         $equipe->update($request->all());
  
-        return response()->json_encode($equipe, 200);
+        return response()->json($equipe, 200);
     }
  
     public function delete(Equipes $equipe)
     {
         $equipe->delete();
  
-        return response()->json_encode(null, 204);
+        return response()->json(null, 204);
     }
 }
